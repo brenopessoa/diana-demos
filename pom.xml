@@ -18,10 +18,10 @@
     </properties>
 
     <modules>
-        <module>diana-java-se</module>
-        <module>diana-java-ee</module>
-        <module>diana-spring</module>
-        <module>diana-guice</module>
+        <module>diana-demo-java-se</module>
+        <module>diana-demo-java-ee</module>
+        <module>diana-demo-spring</module>
+        <module>diana-demo-guice</module>
     </modules>
 
     <dependencies>
