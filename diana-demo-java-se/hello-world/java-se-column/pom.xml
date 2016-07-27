@@ -9,4 +9,11 @@
         <artifactId>hello-world</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.diana.mongodb.driver</groupId>
+            <artifactId>mongodb-document-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
