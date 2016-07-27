@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.diana</groupId>
-    <artifactId>diana-example-parent</artifactId>
+    <artifactId>diana-demo-parent</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>Apache Diana Demo</name>
@@ -11,17 +11,13 @@
         <maven.compile.targetLevel>1.8</maven.compile.targetLevel>
         <maven.compile.sourceLevel>1.8</maven.compile.sourceLevel>
         <maven.compile.version>3.5.1</maven.compile.version>
-
-        <junit.version>4.12</junit.version>
-        <hamcrest-all.version>1.3</hamcrest-all.version>
-        <commons-lang3.version>3.4</commons-lang3.version>
     </properties>
 
     <modules>
-        <module>diana-demo-java-se</module>
-        <module>diana-demo-java-ee</module>
-        <module>diana-demo-spring</module>
         <module>diana-demo-guice</module>
+        <module>diana-demo-java-ee</module>
+        <module>diana-demo-java-se</module>
+        <module>diana-demo-spring</module>
     </modules>
 
     <dependencies>
@@ -63,3 +59,4 @@
             </plugin>
         </plugins>
     </build>
+</project>

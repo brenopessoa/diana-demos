@@ -6,7 +6,7 @@
     <name>Apache Diana Demo using Google Guice</name>
     <parent>
         <groupId>org.apache.diana</groupId>
-        <artifactId>diana-example-parent</artifactId>
+        <artifactId>diana-demo-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 </project>
