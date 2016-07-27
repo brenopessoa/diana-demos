@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+ <artifactId>cdi-se</artifactId>
+ <packaging>jar</packaging>
+ <name>Apache Diana Demo using Java CDI SE</name>
+ <parent>
+  <groupId>diana-demo-java-se</groupId>
+  <artifactId>diana-demo-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+</parent>
+
+<modules>
+  <module>cdi-se-key-value</module>
+  <module>cdi-se-document</module>
+  <module>cdi-se-column</module>
+</modules>
+</project>
