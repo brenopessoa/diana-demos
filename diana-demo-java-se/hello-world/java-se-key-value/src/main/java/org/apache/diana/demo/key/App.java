@@ -1,4 +1,4 @@
-package org.apache.diana.demo.column;
+package org.apache.diana.demo.key;
 
 
 import org.apache.diana.api.Value;
