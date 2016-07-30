@@ -1,8 +1,8 @@
 package org.apache.diana.demo.column;
 
 
-import org.apache.diana.api.column.*;
-import org.apache.diana.cassandra.column.CassandraConfiguration;
+import org.jnosql.diana.api.column.*;
+import org.jnosql.diana.cassandra.column.CassandraConfiguration;
 
 import java.util.Arrays;
 import java.util.List;
