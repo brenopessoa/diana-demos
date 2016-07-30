@@ -11,7 +11,7 @@
 </parent>
 <dependencies>
     <dependency>
-        <groupId>org.apache.diana.mongodb.driver</groupId>
+        <groupId>org.jnosql.diana.mongodb.driver</groupId>
         <artifactId>mongodb-document-api</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </dependency>
