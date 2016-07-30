@@ -1,8 +1,8 @@
 package org.apache.diana.demo;
 
 
-import org.apache.diana.api.document.*;
-import org.apache.diana.mongodb.document.MongoDBDocumentConfiguration;
+import org.jnosql.diana.api.document.*;
+import org.jnosql.diana.mongodb.document.MongoDBDocumentConfiguration;
 
 import java.util.List;
 import java.util.Optional;
