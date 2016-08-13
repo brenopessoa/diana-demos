@@ -1,11 +1,11 @@
 package org.apache.diana.demo.key;
 
 
-import org.apache.diana.api.Value;
-import org.apache.diana.api.key.BucketManager;
-import org.apache.diana.api.key.BucketManagerFactory;
-import org.apache.diana.api.key.KeyValueConfiguration;
-import org.apache.diana.hazelcast.key.HazelCastKeyValueConfiguration;
+import org.jnosql.diana.api.Value;
+import org.jnosql.diana.api.key.BucketManager;
+import org.jnosql.diana.api.key.BucketManagerFactory;
+import org.jnosql.diana.api.key.KeyValueConfiguration;
+import org.jnosql.diana.hazelcast.key.HazelCastKeyValueConfiguration;
 
 import java.util.*;
 
