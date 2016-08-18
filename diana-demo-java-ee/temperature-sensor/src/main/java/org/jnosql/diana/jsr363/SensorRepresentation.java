@@ -3,17 +3,28 @@ package org.jnosql.diana.jsr363;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.measure.Quantity;
+import javax.measure.quantity.Temperature;
+import javax.measure.spi.QuantityFactory;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.Objects;
+
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
+import static tec.uom.se.format.QuantityFormat.getInstance;
+import static tec.uom.se.unit.Units.CELSIUS;
 
 public class SensorRepresentation implements Serializable {
 
+    @JsonIgnore
+    static final ZoneOffset TIME_ZONE = ZoneOffset.UTC;
+
     private String sensorId;
 
-    private String time;
+    private Long time;
 
-    private QuantityRepresentation quantity;
+    private String quantity;
 
     public String getSensorId() {
         return sensorId;
@@ -23,29 +34,37 @@ public class SensorRepresentation implements Serializable {
         this.sensorId = sensorId;
     }
 
-    public String getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 
-    public QuantityRepresentation getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(QuantityRepresentation quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    @JsonIgnore
+    public Quantity<Temperature> toQuantity(QuantityFactory<Temperature> factory) {
+        if (isNotBlank(quantity)) {
+            return (Quantity<Temperature>) getInstance().parse(quantity);
+        }
+        return factory.create(0, CELSIUS);
     }
 
 
     @JsonIgnore
-    public Sensor toSensor() {
+    public Sensor toSensor(QuantityFactory<Temperature> factory) {
         return Sensor.builder()
                 .withSensorId(sensorId)
-                .withTemperature(quantity.toQuantity())
-                .withTime(LocalDate.parse(time)).build();
+                .withTemperature(toQuantity(factory))
+                .withTime(LocalDateTime.ofEpochSecond(time, 0, TIME_ZONE)).build();
     }
 
     @Override
@@ -80,9 +99,9 @@ public class SensorRepresentation implements Serializable {
     @JsonIgnore
     public static SensorRepresentation of(Sensor sensor) {
         SensorRepresentation representation = new SensorRepresentation();
-        representation.setQuantity(QuantityRepresentation.of(sensor.getTemperature()));
+        representation.setQuantity(sensor.getTemperature().toString());
         representation.setSensorId(sensor.getSensorId());
-        representation.setTime(sensor.getTime().toString());
+        representation.setTime(sensor.getTime().toEpochSecond(TIME_ZONE));
         return representation;
     }
 }

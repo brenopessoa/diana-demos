@@ -8,18 +8,22 @@ import tec.uom.se.format.QuantityFormat;
 import javax.measure.Quantity;
 import javax.measure.quantity.Temperature;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Sensor {
 
 
+    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("dd/MM HH:mm");
+
     private final String sensorId;
 
-    private final LocalDate time;
+    private final LocalDateTime time;
 
     private final Quantity<Temperature> temperature;
 
-    Sensor(String sensorId, LocalDate time, Quantity<Temperature> temperature) {
+    Sensor(String sensorId, LocalDateTime time, Quantity<Temperature> temperature) {
         this.sensorId = sensorId;
         this.time = time;
         this.temperature = temperature;
@@ -29,8 +33,12 @@ public class Sensor {
         return sensorId;
     }
 
-    public LocalDate getTime() {
+    public LocalDateTime getTime() {
         return time;
+    }
+
+    public String getFormatedDate() {
+        return DATE_TIME_FORMATTER.format(time);
     }
 
     public Quantity<Temperature> getTemperature() {
@@ -69,7 +77,7 @@ public class Sensor {
 
     public static Sensor of(DocumentCollectionEntity entity) {
         String sensorId = entity.find("sensorId").get().getValue().get(String.class);
-        LocalDate time = entity.find("time").get().getValue().get(LocalDate.class);
+        LocalDateTime time = entity.find("time").get().getValue().get(LocalDateTime.class);
         Document temperature = entity.find("temperature").get();
         QuantityFormat instance = QuantityFormat.getInstance();
         Quantity<Temperature> quantity = (Quantity<Temperature>) instance.parse(temperature.getValue().get(String.class));
@@ -88,7 +96,7 @@ public class Sensor {
 
         private String sensorId;
 
-        private LocalDate time;
+        private LocalDateTime time;
 
         private Quantity<Temperature> temperature;
 
@@ -100,7 +108,7 @@ public class Sensor {
             return this;
         }
 
-        public SensorBuilder withTime(LocalDate time) {
+        public SensorBuilder withTime(LocalDateTime time) {
             this.time = time;
             return this;
         }

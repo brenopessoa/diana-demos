@@ -28,15 +28,16 @@ class LineChartModelBuilder {
 
         for (String sensor : sensorService.getSensors()) {
             List<Sensor> sensors = sensorService.getSensor(sensor);
-            Map<LocalDate, List<Sensor>> map = sensors.stream().collect(Collectors.groupingBy(Sensor::getTime));
+            Map<String, List<Sensor>> map = sensors.stream()
+                    .collect(Collectors.groupingBy(Sensor::getFormatedDate));
             LineChartSeries lineChartSeries = new LineChartSeries();
             lineChartSeries.setLabel(sensor);
 
-            for (LocalDate localDate : map.keySet().stream().sorted().collect(toList())) {
-                List<Sensor> sensorsByDate = map.get(localDate);
+            for (String date : map.keySet().stream().sorted().collect(toList())) {
+                List<Sensor> sensorsByDate = map.get(date);
                 QuantitySummaryStatistics<Temperature> summary = sensorsByDate.stream().map(Sensor::getTemperature).collect(QuantityFunctions.summarizeQuantity(unit));
                 Number value = summary.getAverage().getValue();
-                lineChartSeries.set(localDate.toString(), value);
+                lineChartSeries.set(date, value);
                 numbers.add(value);
             }
             areaModel.addSeries(lineChartSeries);
