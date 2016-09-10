@@ -5,7 +5,7 @@
     <artifactId>jsr363</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>jsr363 Maven Webapp</name>
+    <name>jsr363 Demo Webapp</name>
     <url>http://maven.apache.org</url>
     <properties>
         <maven.compile.targetLevel>1.8</maven.compile.targetLevel>

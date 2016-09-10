@@ -1,18 +1,15 @@
 package org.jnosql.diana.jsr363;
 
 
-import org.apache.diana.api.key.BucketManagerFactory;
-import org.apache.diana.api.key.KeyValueConfiguration;
-import org.apache.diana.hazelcast.key.HazelCastKeyValueConfiguration;
-
+import java.util.List;
+import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.measure.Quantity;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import org.apache.diana.api.key.BucketManagerFactory;
+import org.apache.diana.hazelcast.key.HazelCastKeyValueConfiguration;
 
 import static java.util.Collections.singletonMap;
 
@@ -25,7 +22,7 @@ public class BucketManagerProducer {
 
     @PostConstruct
     public void init() {
-        KeyValueConfiguration configuration = new HazelCastKeyValueConfiguration();
+        HazelCastKeyValueConfiguration configuration = new HazelCastKeyValueConfiguration();
         managerFactory = configuration.getManagerFactory(CONFIGURATION);
     }
 
