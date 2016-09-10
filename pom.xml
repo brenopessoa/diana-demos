@@ -14,10 +14,8 @@
     </properties>
 
     <modules>
-        <module>diana-demo-guice</module>
         <module>diana-demo-java-ee</module>
         <module>diana-demo-java-se</module>
-        <module>diana-demo-spring</module>
     </modules>
 
     <dependencies>

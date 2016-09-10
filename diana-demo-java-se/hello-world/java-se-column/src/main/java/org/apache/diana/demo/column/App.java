@@ -1,6 +1,7 @@
 package org.apache.diana.demo.column;
 
 
+import org.jnosql.diana.api.TTL;
 import org.jnosql.diana.api.column.*;
 import org.jnosql.diana.cassandra.column.CassandraConfiguration;
 
@@ -26,6 +27,7 @@ public class App {
             entity.add(Column.of("options", Arrays.asList(1, 2, 3)));
 
             columnEntityManager.save(entity);
+            columnEntityManager.saveAsync(entity, TTL.ofHours(5));
 
             ColumnQuery query = ColumnQuery.of(COLUMN_FAMILY);
             query.addCondition(ColumnCondition.eq(id));
