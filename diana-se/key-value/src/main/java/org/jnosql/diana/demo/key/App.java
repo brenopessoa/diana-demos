@@ -1,4 +1,4 @@
-package org.apache.diana.demo.key;
+package org.jnosql.diana.demo.key;
 
 
 import org.jnosql.diana.api.Value;

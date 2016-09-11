@@ -1,4 +1,4 @@
-package org.apache.diana.demo;
+package org.jnosql.diana.demo;
 
 
 import org.jnosql.diana.api.document.*;

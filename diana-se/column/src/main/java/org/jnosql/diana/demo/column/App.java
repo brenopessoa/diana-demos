@@ -1,4 +1,4 @@
-package org.apache.diana.demo.column;
+package org.jnosql.diana.demo.column;
 
 
 import org.jnosql.diana.api.TTL;
