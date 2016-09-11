@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>key-value</artifactId>
     <packaging>jar</packaging>
-    <name>Apache Diana Demo hello world to key-value</name>
+    <name>Diana Demo hello world to key-value</name>
     <parent>
         <groupId>org.jnosql.diana</groupId>
         <artifactId>java-se</artifactId>
