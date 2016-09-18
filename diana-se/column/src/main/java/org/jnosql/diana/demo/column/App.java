@@ -19,7 +19,7 @@ public class App {
 
         try(ColumnFamilyManagerFactory managerFactory = condition.getManagerFactory()) {
             ColumnFamilyManager columnEntityManager = managerFactory.getColumnEntityManager(KEY_SPACE);
-            ColumnFamilyEntity entity = ColumnFamilyEntity.of(COLUMN_FAMILY);
+            ColumnEntity entity = ColumnEntity.of(COLUMN_FAMILY);
             Column id = Column.of("id", 10L);
             entity.add(id);
             entity.add(Column.of("version", 0.001));
@@ -31,7 +31,7 @@ public class App {
 
             ColumnQuery query = ColumnQuery.of(COLUMN_FAMILY);
             query.addCondition(ColumnCondition.eq(id));
-            List<ColumnFamilyEntity> columnFamilyEntities = columnEntityManager.find(query);
+            List<ColumnEntity> columnFamilyEntities = columnEntityManager.find(query);
             System.out.println(columnFamilyEntities);
 
         }
