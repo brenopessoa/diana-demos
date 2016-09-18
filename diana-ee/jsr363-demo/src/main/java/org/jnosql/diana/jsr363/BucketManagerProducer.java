@@ -1,15 +1,16 @@
 package org.jnosql.diana.jsr363;
 
 
-import java.util.List;
-import java.util.Map;
+import org.jnosql.diana.api.key.BucketManagerFactory;
+import org.jnosql.diana.hazelcast.key.HazelCastKeyValueConfiguration;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.measure.Quantity;
-import org.apache.diana.api.key.BucketManagerFactory;
-import org.apache.diana.hazelcast.key.HazelCastKeyValueConfiguration;
+import java.util.List;
+import java.util.Map;
 
 import static java.util.Collections.singletonMap;
 

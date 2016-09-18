@@ -76,11 +76,11 @@
         <dependency>
             <artifactId>uom-se</artifactId>
             <groupId>tec.uom</groupId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>org.apache.diana.hazelcast.driver</groupId>
+            <groupId>org.jnosql.diana.hazelcast.driver</groupId>
             <artifactId>hazelcast-key-value-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
