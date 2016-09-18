@@ -2,12 +2,11 @@ package org.jnosql.diana.jsr363;
 
 
 import org.jnosql.diana.api.document.Document;
-import org.jnosql.diana.api.document.DocumentCollectionEntity;
+import org.jnosql.diana.api.document.DocumentEntity;
 import tec.uom.se.format.QuantityFormat;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Temperature;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
@@ -75,7 +74,7 @@ public class Sensor {
         return sb.toString();
     }
 
-    public static Sensor of(DocumentCollectionEntity entity) {
+    public static Sensor of(DocumentEntity entity) {
         String sensorId = entity.find("sensorId").get().getValue().get(String.class);
         LocalDateTime time = entity.find("time").get().getValue().get(LocalDateTime.class);
         Document temperature = entity.find("temperature").get();
