@@ -20,7 +20,7 @@ public class SensorRepository {
     private DocumentCollectionManager documentCollectionManager;
 
     public void save(Sensor sensor) {
-        DocumentCollectionEntity entity = DocumentCollectionEntity.of(TEMPERATURE);
+        DocumentEntity entity = DocumentEntity.of(TEMPERATURE);
         entity.add(Document.of("sensorId", sensor.getSensorId()));
         entity.add(Document.of("temperature", sensor.getTemperature().toString()));
         entity.add(Document.of("time", sensor.getTime()));
@@ -31,7 +31,7 @@ public class SensorRepository {
     public List<String> sensors() {
         DocumentQuery query = DocumentQuery.of(SENSORS);
         query.addCondition(DocumentCondition.eq(SENSOR_ID));
-        List<DocumentCollectionEntity> documentCollectionEntities = documentCollectionManager.find(query);
+        List<DocumentEntity> documentCollectionEntities = documentCollectionManager.find(query);
         if (documentCollectionEntities.isEmpty()) {
             return emptyList();
         }
@@ -40,7 +40,7 @@ public class SensorRepository {
     }
 
     public void saveSensors(List<String> sensors) {
-        DocumentCollectionEntity entity = DocumentCollectionEntity.of(SENSORS);
+        DocumentEntity entity = DocumentEntity.of(SENSORS);
         entity.add(SENSOR_ID);
         entity.add(Document.of("devices", sensors.stream().distinct().collect(toList())));
         if (sensors.size() == 1) {
@@ -53,7 +53,7 @@ public class SensorRepository {
     public List<Sensor> getSensor(String sensorId) {
         DocumentQuery query = DocumentQuery.of(TEMPERATURE);
         query.addCondition(DocumentCondition.eq(Document.of("sensorId", sensorId)));
-        List<DocumentCollectionEntity> documentCollectionEntities = documentCollectionManager.find(query);
+        List<DocumentEntity> documentCollectionEntities = documentCollectionManager.find(query);
         return documentCollectionEntities.stream().map(Sensor::of).collect(Collectors.toList());
     }
 
