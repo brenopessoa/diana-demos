@@ -14,7 +14,7 @@ import static tec.uom.se.function.QuantityFunctions.fiterByUnit;
 import static tec.uom.se.unit.Units.CELSIUS;
 import static tec.uom.se.unit.Units.KELVIN;
 
-public class QuantityReppository {
+public class QuantityRepository {
 
     @Inject
     private List<Quantity> quantities;

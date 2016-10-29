@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.toList;
 
+import java.util.ArrayList;
+
 public class SensorRepository {
 
     private static final String TEMPERATURE = "temperature";
@@ -36,7 +38,10 @@ public class SensorRepository {
             return emptyList();
         }
         Document devices = documentCollectionEntities.get(0).find("devices").get();
-        return devices.getValue().cast();
+        //return devices.getValue().cast();
+        List<String> result = new ArrayList<>(); // FIXME workaround for missing cast() method
+        result.add(String.valueOf(devices.getValue().get()));
+        return result;
     }
 
     public void saveSensors(List<String> sensors) {
