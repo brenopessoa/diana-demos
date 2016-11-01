@@ -24,7 +24,7 @@ public class TemperatureResource {
     private QuantityFactory<Temperature> factory;
 
     @Inject
-    private QuantityReppository quantityReppository;
+    private QuantityRepository quantityReppository;
 
 
     @GET
