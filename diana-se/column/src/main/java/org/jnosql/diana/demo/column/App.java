@@ -10,9 +10,7 @@ import org.jnosql.diana.api.column.ColumnFamilyManagerFactory;
 import org.jnosql.diana.api.column.ColumnQuery;
 import org.jnosql.diana.cassandra.column.CassandraConfiguration;
 
-import java.time.Duration;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 public class App {
@@ -24,8 +22,8 @@ public class App {
 
         ColumnConfiguration condition = new CassandraConfiguration();
 
-        try(ColumnFamilyManagerFactory managerFactory = condition.getManagerFactory()) {
-            ColumnFamilyManager columnEntityManager = managerFactory.getColumnEntityManager(KEY_SPACE);
+        try(ColumnFamilyManagerFactory managerFactory = condition.get()) {
+            ColumnFamilyManager columnEntityManager = managerFactory.get(KEY_SPACE);
             ColumnEntity entity = ColumnEntity.of(COLUMN_FAMILY);
             Column id = Column.of("id", 10L);
             entity.add(id);
@@ -35,13 +33,10 @@ public class App {
 
             columnEntityManager.save(entity);
 
-            columnEntityManager.saveAsync(entity, Duration.ofSeconds(20));
-
             ColumnQuery query = ColumnQuery.of(COLUMN_FAMILY);
-            query.addCondition(ColumnCondition.eq(id));
+            query.and(ColumnCondition.eq(id));
             Optional<ColumnEntity> result = columnEntityManager.singleResult(query);
-            List<ColumnEntity> columnFamilyEntities = columnEntityManager.singleResult(query);
-            System.out.println(columnFamilyEntities);
+            System.out.println(result);
 
         }
 

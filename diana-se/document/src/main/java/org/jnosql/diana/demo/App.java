@@ -14,8 +14,8 @@ public class App {
 
     public static void main(String[] args)  {
         DocumentConfiguration configuration = new MongoDBDocumentConfiguration();
-        try(DocumentCollectionManagerFactory collectionFactory = configuration.getManagerFactory();) {
-            DocumentCollectionManager collectionManager = collectionFactory.getDocumentEntityManager(DATABASE);
+        try(DocumentCollectionManagerFactory collectionFactory = configuration.get();) {
+            DocumentCollectionManager collectionManager = collectionFactory.get(DATABASE);
 
             DocumentEntity entity = DocumentEntity.of(DOCUMENT_COLLECTION);
             entity.add(Document.of("name", "Daniel Soro"));
@@ -25,7 +25,7 @@ public class App {
             Optional<Document> id = entitySaved.find("_id");
 
             DocumentQuery query = DocumentQuery.of(DOCUMENT_COLLECTION);
-            query.addCondition(DocumentCondition.eq(id.get()));
+            query.and(DocumentCondition.eq(id.get()));
             List<DocumentEntity> documentsFound = collectionManager.find(query);
 
 

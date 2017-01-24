@@ -15,7 +15,7 @@ public class App {
     public static void main(String[] args) {
 
         KeyValueConfiguration configuration = new HazelCastKeyValueConfiguration();
-        try (BucketManagerFactory managerFactory = configuration.getManagerFactory()) {
+        try (BucketManagerFactory managerFactory = configuration.get()) {
             BucketManager bucket = managerFactory.getBucketManager("bucket");
             List<String> list = managerFactory.getList("bucketList", String.class);
             Set<String> set = managerFactory.getSet("bucketSet", String.class);
