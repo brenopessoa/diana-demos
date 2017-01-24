@@ -2,7 +2,11 @@ package org.jnosql.diana.jsr363;
 
 
 import org.jnosql.diana.api.TypeReference;
-import org.jnosql.diana.api.document.*;
+import org.jnosql.diana.api.document.Document;
+import org.jnosql.diana.api.document.DocumentCollectionManager;
+import org.jnosql.diana.api.document.DocumentCondition;
+import org.jnosql.diana.api.document.DocumentEntity;
+import org.jnosql.diana.api.document.DocumentQuery;
 
 import javax.inject.Inject;
 import java.util.List;
