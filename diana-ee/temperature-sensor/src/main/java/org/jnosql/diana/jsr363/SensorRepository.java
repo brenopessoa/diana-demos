@@ -1,6 +1,7 @@
 package org.jnosql.diana.jsr363;
 
 
+import org.jnosql.diana.api.TypeReference;
 import org.jnosql.diana.api.document.*;
 
 import javax.inject.Inject;
@@ -30,13 +31,13 @@ public class SensorRepository {
 
     public List<String> sensors() {
         DocumentQuery query = DocumentQuery.of(SENSORS);
-        query.addCondition(DocumentCondition.eq(SENSOR_ID));
+        query.and(DocumentCondition.eq(SENSOR_ID));
         List<DocumentEntity> documentCollectionEntities = documentCollectionManager.find(query);
         if (documentCollectionEntities.isEmpty()) {
             return emptyList();
         }
         Document devices = documentCollectionEntities.get(0).find("devices").get();
-        return devices.getValue().cast();
+        return devices.get(new TypeReference<List<String>>() {});
     }
 
     public void saveSensors(List<String> sensors) {
@@ -52,7 +53,7 @@ public class SensorRepository {
 
     public List<Sensor> getSensor(String sensorId) {
         DocumentQuery query = DocumentQuery.of(TEMPERATURE);
-        query.addCondition(DocumentCondition.eq(Document.of("sensorId", sensorId)));
+        query.and(DocumentCondition.eq(Document.of("sensorId", sensorId)));
         List<DocumentEntity> documentCollectionEntities = documentCollectionManager.find(query);
         return documentCollectionEntities.stream().map(Sensor::of).collect(Collectors.toList());
     }

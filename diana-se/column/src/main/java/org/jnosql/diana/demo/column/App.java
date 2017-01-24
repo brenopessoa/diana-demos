@@ -1,12 +1,19 @@
 package org.jnosql.diana.demo.column;
 
 
-import org.jnosql.diana.api.TTL;
-import org.jnosql.diana.api.column.*;
+import org.jnosql.diana.api.column.Column;
+import org.jnosql.diana.api.column.ColumnCondition;
+import org.jnosql.diana.api.column.ColumnConfiguration;
+import org.jnosql.diana.api.column.ColumnEntity;
+import org.jnosql.diana.api.column.ColumnFamilyManager;
+import org.jnosql.diana.api.column.ColumnFamilyManagerFactory;
+import org.jnosql.diana.api.column.ColumnQuery;
 import org.jnosql.diana.cassandra.column.CassandraConfiguration;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class App {
 
@@ -27,11 +34,13 @@ public class App {
             entity.add(Column.of("options", Arrays.asList(1, 2, 3)));
 
             columnEntityManager.save(entity);
-            columnEntityManager.saveAsync(entity, TTL.ofHours(5));
+
+            columnEntityManager.saveAsync(entity, Duration.ofSeconds(20));
 
             ColumnQuery query = ColumnQuery.of(COLUMN_FAMILY);
             query.addCondition(ColumnCondition.eq(id));
-            List<ColumnEntity> columnFamilyEntities = columnEntityManager.find(query);
+            Optional<ColumnEntity> result = columnEntityManager.singleResult(query);
+            List<ColumnEntity> columnFamilyEntities = columnEntityManager.singleResult(query);
             System.out.println(columnFamilyEntities);
 
         }
