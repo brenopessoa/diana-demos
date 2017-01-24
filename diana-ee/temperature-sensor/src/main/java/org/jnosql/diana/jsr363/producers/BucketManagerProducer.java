@@ -2,7 +2,6 @@ package org.jnosql.diana.jsr363.producers;
 
 
 import org.jnosql.diana.api.key.BucketManagerFactory;
-import org.jnosql.diana.api.key.KeyValueConfiguration;
 import org.jnosql.diana.hazelcast.key.HazelCastKeyValueConfiguration;
 
 import javax.annotation.PostConstruct;
@@ -24,7 +23,7 @@ class BucketManagerProducer {
     @PostConstruct
     public void init() {
         HazelCastKeyValueConfiguration configuration = new HazelCastKeyValueConfiguration();
-        managerFactory = configuration.getManagerFactory(CONFIGURATION);
+        managerFactory = configuration.get(CONFIGURATION);
     }
 
     @PreDestroy
