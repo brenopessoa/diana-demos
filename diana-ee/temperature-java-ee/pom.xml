@@ -95,7 +95,7 @@
         <dependency>
             <groupId>org.jnosql.diana.mongodb.driver</groupId>
             <artifactId>mongodb-document-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
 
         <dependency>

@@ -17,7 +17,7 @@
         <dependency>
             <groupId>org.jnosql.diana</groupId>
             <artifactId>hazelcast-driver</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
 </project>
