@@ -9,10 +9,10 @@ import org.jnosql.diana.api.column.ColumnQuery;
 import org.jnosql.diana.cassandra.column.CassandraColumnFamilyManager;
 import org.jnosql.diana.cassandra.column.CassandraConfiguration;
 import org.jnosql.diana.cassandra.column.CassandraDocumentEntityManagerFactory;
+import org.jnosql.diana.cassandra.column.CassandraPrepareStatment;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 public class CassandraApp {
 
@@ -38,11 +38,13 @@ public class CassandraApp {
             //common implementation
             ColumnQuery query = ColumnQuery.of(COLUMN_FAMILY);
             query.and(ColumnCondition.eq(id));
-            Optional<ColumnEntity> result = columnEntityManager.singleResult(query);
+            List<ColumnEntity> columnEntities = columnEntityManager.find(query, ConsistencyLevel.LOCAL_QUORUM);
 
             //cassandra implementation
             columnEntityManager.save(entity, ConsistencyLevel.THREE);
             List<ColumnEntity> entities = columnEntityManager.cql("select * from newKeySpace.newColumnFamily");
+            CassandraPrepareStatment cassandraPrepareStatment = columnEntityManager.nativeQueryPrepare("select * from newKeySpace.newColumnFamily where id ?");
+            List<ColumnEntity> entityList = cassandraPrepareStatment.bind(10L).executeQuery();
             System.out.println(entities);
 
         }
