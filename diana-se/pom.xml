@@ -17,5 +17,6 @@
     <module>column</module>
     <module>document</module>
     <module>key-value</module>
+    <module>double-document</module>
 </modules>
 </project>

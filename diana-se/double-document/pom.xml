@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>double-document</artifactId>
+    <packaging>jar</packaging>
+    <name>Diana Demo hello world to documnt</name>
+    <parent>
+        <groupId>org.jnosql.diana</groupId>
+        <artifactId>java-se</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.jnosql.diana</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+       <dependency>
+            <groupId>org.jnosql.diana</groupId>
+            <artifactId>couchbase-driver</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+       </dependencies>
+</project>
