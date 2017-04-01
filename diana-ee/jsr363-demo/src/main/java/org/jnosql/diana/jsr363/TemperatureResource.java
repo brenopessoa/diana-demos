@@ -1,18 +1,22 @@
 package org.jnosql.diana.jsr363;
 
-import tec.uom.se.unit.Units;
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+
+import java.time.LocalTime;
 
 import javax.inject.Inject;
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Temperature;
 import javax.measure.spi.QuantityFactory;
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import tec.uom.se.unit.Units;
 
 @Path("api/v1/temperature")
 @Produces(APPLICATION_JSON + ";charset=UTF-8")

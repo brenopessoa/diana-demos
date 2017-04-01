@@ -1,21 +1,26 @@
 package org.jnosql.diana.jsr363;
 
 
-import org.primefaces.model.chart.*;
-import tec.uom.se.function.QuantityFunctions;
-import tec.uom.se.function.QuantitySummaryStatistics;
+import static java.util.stream.Collectors.toList;
+import static tec.uom.se.unit.Units.CELSIUS;
 
-import javax.inject.Inject;
-import javax.measure.Unit;
-import javax.measure.quantity.Temperature;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static java.util.stream.Collectors.toList;
-import static tec.uom.se.unit.Units.CELSIUS;
+import javax.inject.Inject;
+import javax.measure.Unit;
+import javax.measure.quantity.Temperature;
+
+import org.primefaces.model.chart.Axis;
+import org.primefaces.model.chart.AxisType;
+import org.primefaces.model.chart.CategoryAxis;
+import org.primefaces.model.chart.LineChartModel;
+import org.primefaces.model.chart.LineChartSeries;
+
+import tec.uom.se.function.QuantityFunctions;
+import tec.uom.se.function.QuantitySummaryStatistics;
 
 class LineChartModelBuilder {
 

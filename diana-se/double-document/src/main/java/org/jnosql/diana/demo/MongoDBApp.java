@@ -21,8 +21,8 @@ public class MongoDBApp {
 
     public static void main(String[] args)  {
         String idValue = UUID.randomUUID().toString();
-        DocumentConfiguration configuration = new MongoDBDocumentConfiguration();
-        try(DocumentCollectionManagerFactory collectionFactory = configuration.get();) {
+        DocumentConfiguration<?> configuration = new MongoDBDocumentConfiguration();
+        try(DocumentCollectionManagerFactory<?> collectionFactory = configuration.get();) {
             DocumentCollectionManager collectionManager = collectionFactory.get(DATABASE);
 
             DocumentEntity entity = DocumentEntity.of(DOCUMENT_COLLECTION);

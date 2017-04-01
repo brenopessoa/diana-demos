@@ -12,8 +12,9 @@ import static tec.uom.se.unit.Units.KELVIN;
 @Model
 public class ChartView implements Serializable {
 
-
-    @Inject
+	private static final long serialVersionUID = 2024781042109517878L;
+	
+	@Inject
     private LineChartModelBuilder builder;
 
 
