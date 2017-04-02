@@ -17,7 +17,9 @@ import static tec.uom.se.unit.Units.CELSIUS;
 
 public class SensorRepresentation implements Serializable {
 
-    @JsonIgnore
+	private static final long serialVersionUID = 5838915817594198192L;
+
+	@JsonIgnore
     static final ZoneOffset TIME_ZONE = ZoneOffset.UTC;
 
     private String sensorId;

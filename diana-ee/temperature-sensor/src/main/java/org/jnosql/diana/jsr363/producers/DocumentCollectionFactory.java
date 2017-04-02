@@ -12,17 +12,17 @@ import javax.enterprise.inject.Produces;
 @ApplicationScoped
 class DocumentCollectionFactory {
 
-    private DocumentCollectionManagerFactory managerFactory;
+    private DocumentCollectionManagerFactory<?> managerFactory;
 
     @PostConstruct
     public void setup() {
-        DocumentConfiguration configuration = new MongoDBDocumentConfiguration();
+        DocumentConfiguration<?> configuration = new MongoDBDocumentConfiguration();
         managerFactory = configuration.get();
     }
 
 
     @Produces
-    public DocumentCollectionManagerFactory getManagerFactory() {
+    public DocumentCollectionManagerFactory<?> getManagerFactory() {
         return managerFactory;
     }
 

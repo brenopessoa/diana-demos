@@ -1,21 +1,24 @@
 package org.jnosql.diana.jsr363;
 
 
-import tec.uom.se.unit.Units;
+import static java.util.stream.Collectors.toList;
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import static org.jnosql.diana.jsr363.SensorRepresentation.TIME_ZONE;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.measure.quantity.Temperature;
 import javax.measure.spi.QuantityFactory;
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.toList;
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
-import static org.jnosql.diana.jsr363.SensorRepresentation.TIME_ZONE;
+import tec.uom.se.unit.Units;
 
 @Path("api/v1/sensors")
 @Produces(APPLICATION_JSON + ";charset=UTF-8")
