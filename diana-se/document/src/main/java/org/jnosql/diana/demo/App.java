@@ -21,12 +21,12 @@ public class App {
             entity.add(Document.of("name", "Daniel Soro"));
             entity.add(Document.of("age", 26));
 
-            DocumentEntity entitySaved = collectionManager.save(entity);
+            DocumentEntity entitySaved = collectionManager.insert(entity);
             Optional<Document> id = entitySaved.find("_id");
 
             DocumentQuery query = DocumentQuery.of(DOCUMENT_COLLECTION);
             query.and(DocumentCondition.eq(id.get()));
-            List<DocumentEntity> documentsFound = collectionManager.find(query);
+            List<DocumentEntity> documentsFound = collectionManager.select(query);
 
 
         }

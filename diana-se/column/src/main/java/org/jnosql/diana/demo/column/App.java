@@ -31,7 +31,7 @@ public class App {
             entity.add(Column.of("name", "Diana"));
             entity.add(Column.of("options", Arrays.asList(1, 2, 3)));
 
-            columnEntityManager.save(entity);
+            columnEntityManager.insert(entity);
 
             ColumnQuery query = ColumnQuery.of(COLUMN_FAMILY);
             query.and(ColumnCondition.eq(id));
