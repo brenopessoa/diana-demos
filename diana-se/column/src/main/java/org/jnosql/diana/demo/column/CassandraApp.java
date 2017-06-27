@@ -33,12 +33,12 @@ public class CassandraApp {
             entity.add(Column.of("name", "Diana"));
             entity.add(Column.of("options", Arrays.asList(1, 2, 3)));
 
-            columnEntityManager.save(entity);
+            columnEntityManager.insert(entity);
 
             //common implementation
             ColumnQuery query = ColumnQuery.of(COLUMN_FAMILY);
             query.and(ColumnCondition.eq(id));
-            List<ColumnEntity> columnEntities = columnEntityManager.find(query, ConsistencyLevel.LOCAL_QUORUM);
+            List<ColumnEntity> columnEntities = columnEntityManager.select(query, ConsistencyLevel.LOCAL_QUORUM);
 
             //cassandra implementation
             columnEntityManager.save(entity, ConsistencyLevel.THREE);
