@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.jnosql.diana</groupId>
         <artifactId>java-se</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2</version>
     </parent>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,12 +16,12 @@
         <dependency>
             <groupId>org.jnosql.diana</groupId>
             <artifactId>mongodb-driver</artifactId>
-            <version>0.0.2</version>
+            <version>${project.version}</version>
         </dependency>
        <dependency>
             <groupId>org.jnosql.diana</groupId>
             <artifactId>couchbase-driver</artifactId>
-            <version>0.0.2</version>
+           <version>${project.version}</version>
         </dependency>
        </dependencies>
 </project>
