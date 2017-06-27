@@ -4,7 +4,7 @@
     <groupId>org.jnosql.diana</groupId>
     <artifactId>diana-demo-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>Apache Diana Demo</name>
 
     <properties>
