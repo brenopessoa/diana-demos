@@ -1,10 +1,11 @@
-# Document
+# column
 
-A diana project with Java SE using using Column API with Cassandra as driver implementation.
+A diana project with Java SE using Document API with MongoDB as driver implementation.
 
-![Cassandra Project](https://github.com/JNOSQL/jnosql-site/blob/master/assets/img/logos/cassandra.png)
+![MongoDB Project](https://github.com/JNOSQL/jnosql-site/blob/master/assets/img/logos/mongodb.png)
 
-**Cassandra**: Apache Cassandra is a free and open-source distributed database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure.
+
+**Mongodb**: MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas.
 
 
 To run this project a Cassandra instance is required, so you can use either a local instalation or using Docker.
@@ -23,7 +24,7 @@ Follow the instructions in: http://cassandra.apache.org/doc/latest/getting_start
 1. Install docker: https://www.docker.com/
 1. https://store.docker.com/images/cassandra
 1. Run docker command
-1. `_docker run -d --name casandra-instance -p 9042:9042 cassandra_`
+1. `docker run -d --name casandra-instance -p 9042:9042 cassandra`
 
 
 
