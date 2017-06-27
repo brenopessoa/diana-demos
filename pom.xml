@@ -15,7 +15,6 @@
     </properties>
 
     <modules>
-        <module>diana-ee</module>
         <module>diana-se</module>
     </modules>
 
