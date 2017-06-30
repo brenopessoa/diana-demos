@@ -20,9 +20,14 @@
     <groupId>org.jnosql.diana</groupId>
     <artifactId>diana-demo-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.2</version>
+
     <name>Apache Diana Demo</name>
 
+    <parent>
+        <groupId>org.jnosql</groupId>
+        <artifactId>jnosql-parent</artifactId>
+        <version>0.0.2</version>
+    </parent>
     <properties>
         <maven.compile.targetLevel>1.8</maven.compile.targetLevel>
         <maven.compile.sourceLevel>1.8</maven.compile.sourceLevel>
