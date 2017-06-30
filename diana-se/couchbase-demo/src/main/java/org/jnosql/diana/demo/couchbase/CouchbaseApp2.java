@@ -54,4 +54,6 @@ public class CouchbaseApp2 {
 
         }
     }
+
+    private CouchbaseApp2() {}
 }
