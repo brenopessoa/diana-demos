@@ -14,9 +14,9 @@
     </properties>
 
 <modules>
-    <module>column</module>
-    <module>document</module>
-    <module>key-value</module>
-    <module>double-document</module>
+    <module>cassandra-demo</module>
+    <module>mongodb-demo</module>
+    <module>hazelcast-demo</module>
+    <module>couchbase-demo</module>
 </modules>
 </project>
