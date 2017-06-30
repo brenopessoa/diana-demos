@@ -14,7 +14,7 @@
  *
  */
 
-package org.jnosql.diana.demo.column;
+package org.jnosql.diana.demo.cassandra;
 
 
 import org.jnosql.diana.api.column.Column;

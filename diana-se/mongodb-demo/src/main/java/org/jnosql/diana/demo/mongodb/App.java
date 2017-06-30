@@ -14,7 +14,7 @@
  *
  */
 
-package org.jnosql.diana.demo;
+package org.jnosql.diana.demo.mongodb;
 
 
 import org.jnosql.diana.api.document.Document;

@@ -14,7 +14,7 @@
  *
  */
 
-package org.jnosql.diana.demo.key;
+package org.jnosql.diana.demo.hazelcast;
 
 
 import org.jnosql.diana.api.Value;
@@ -41,8 +41,8 @@ public class App {
             Set<String> set = managerFactory.getSet("bucketSet", String.class);
             Map<String, Integer> map = managerFactory.getMap("bucketList", String.class, Integer.class);
             Queue<String> queue = managerFactory.getQueue("queueList", String.class);
-            bucket.put("key", "value");
-            Optional<Value> value = bucket.get("key");
+            bucket.put("hazelcast", "value");
+            Optional<Value> value = bucket.get("hazelcast");
         }
 
 

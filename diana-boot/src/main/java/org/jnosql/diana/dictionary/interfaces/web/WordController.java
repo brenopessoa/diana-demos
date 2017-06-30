@@ -26,8 +26,8 @@ public class WordController {
         return ResponseEntity.status(CREATED).build();
     }
 
-    @RequestMapping(value = "/{key}", method = GET)
-    public ResponseEntity<Word> findByKey(@PathVariable("key") String key) {
+    @RequestMapping(value = "/{hazelcast}", method = GET)
+    public ResponseEntity<Word> findByKey(@PathVariable("hazelcast") String key) {
         return ResponseEntity.ok()
                 .body(service.findByKey(key));
     }

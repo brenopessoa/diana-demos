@@ -14,42 +14,43 @@
  *
  */
 
-package org.jnosql.diana.demo;
+package org.jnosql.diana.demo.couchbase;
 
 
-import com.couchbase.client.java.document.json.JsonObject;
 import org.jnosql.diana.api.document.Document;
+import org.jnosql.diana.api.document.DocumentCollectionManager;
+import org.jnosql.diana.api.document.DocumentCollectionManagerFactory;
+import org.jnosql.diana.api.document.DocumentCondition;
+import org.jnosql.diana.api.document.DocumentConfiguration;
 import org.jnosql.diana.api.document.DocumentEntity;
-import org.jnosql.diana.couchbase.document.CouchbaseDocumentCollectionManager;
+import org.jnosql.diana.api.document.DocumentQuery;
 import org.jnosql.diana.couchbase.document.CouchbaseDocumentConfiguration;
-import org.jnosql.diana.couchbase.document.CouhbaseDocumentCollectionManagerFactory;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public class CouchbaseApp2 {
+public class CouchbaseApp {
 
     public static final String DATABASE = "default";
     public static final String DOCUMENT_COLLECTION = "person";
 
     public static void main(String[] args)  {
         String idValue = UUID.randomUUID().toString();
-        CouchbaseDocumentConfiguration configuration = new CouchbaseDocumentConfiguration();
-        try(CouhbaseDocumentCollectionManagerFactory collectionFactory = configuration.get();) {
-            CouchbaseDocumentCollectionManager collectionManager = collectionFactory.get(DATABASE);
+        DocumentConfiguration configuration = new CouchbaseDocumentConfiguration();
+        try(DocumentCollectionManagerFactory collectionFactory = configuration.get();) {
+            DocumentCollectionManager collectionManager = collectionFactory.get(DATABASE);
 
             DocumentEntity entity = DocumentEntity.of(DOCUMENT_COLLECTION);
             entity.add(Document.of("name", "Daniel Soro"));
             entity.add(Document.of("age", 26));
             entity.add(Document.of("_id", idValue));
             DocumentEntity entitySaved = collectionManager.insert(entity);
-            Optional<Document> name = entitySaved.find("name");
+            Optional<Document> id = entitySaved.find("_id");
 
-            JsonObject params = JsonObject.create();
-            params.put("name", name.get().get());
-            List<DocumentEntity> entities = collectionManager.n1qlQuery("select * from " + DATABASE + " where name = $name", params);
-            System.out.println(entities);
+            DocumentQuery query = DocumentQuery.of(DOCUMENT_COLLECTION);
+            query.and(DocumentCondition.eq(id.get()));
+            List<DocumentEntity> documentsFound = collectionManager.select(query);
 
 
         }
