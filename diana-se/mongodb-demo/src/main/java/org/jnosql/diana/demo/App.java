@@ -17,7 +17,13 @@
 package org.jnosql.diana.demo;
 
 
-import org.jnosql.diana.api.document.*;
+import org.jnosql.diana.api.document.Document;
+import org.jnosql.diana.api.document.DocumentCollectionManager;
+import org.jnosql.diana.api.document.DocumentCollectionManagerFactory;
+import org.jnosql.diana.api.document.DocumentCondition;
+import org.jnosql.diana.api.document.DocumentConfiguration;
+import org.jnosql.diana.api.document.DocumentEntity;
+import org.jnosql.diana.api.document.DocumentQuery;
 import org.jnosql.diana.mongodb.document.MongoDBDocumentConfiguration;
 
 import java.util.List;
@@ -47,4 +53,6 @@ public class App {
 
         }
     }
+
+    private App() {}
 }

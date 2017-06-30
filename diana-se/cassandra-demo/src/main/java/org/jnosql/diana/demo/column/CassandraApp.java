@@ -68,4 +68,6 @@ public class CassandraApp {
 
     }
 
+    private CassandraApp() {}
+
 }

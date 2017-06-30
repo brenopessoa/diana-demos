@@ -23,7 +23,11 @@ import org.jnosql.diana.api.key.BucketManagerFactory;
 import org.jnosql.diana.api.key.KeyValueConfiguration;
 import org.jnosql.diana.hazelcast.key.HazelCastKeyValueConfiguration;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Queue;
+import java.util.Set;
 
 public class App {
 
@@ -43,5 +47,7 @@ public class App {
 
 
     }
+
+    private App() {}
 }
 
