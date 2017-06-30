@@ -8,7 +8,7 @@ A diana project with Java SE using Document API with MongoDB as driver implement
 **Mongodb**: MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas.
 
 
-To run this project a Cassandra instance is required, so you can use either a local instalation or using Docker.
+To run this project a MongoDB instance is required, so you can use either a local instalation or using Docker.
 
 
 ## Manual instalation

@@ -8,7 +8,7 @@ A diana project with Java SE using Document API with MongoDB as driver implement
 **Couchbase**: Couchbase Server, originally known as Membase, is an open-source, distributed multi-model NoSQL document-oriented database software package that is optimized for interactive applications.
 
 
-To run this project a Cassandra instance is required, so you can use either a local instalation or using Docker.
+To run this project a couchbase instance is required, so you can use either a local instalation or using Docker.
 
 
 ## Manual instalation
