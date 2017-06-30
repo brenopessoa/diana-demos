@@ -1,4 +1,4 @@
-# column
+# mongodb-demo
 
 A diana project with Java SE using Document API with MongoDB as driver implementation.
 

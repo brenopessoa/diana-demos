@@ -1,4 +1,4 @@
-# Document
+# casandra-demo
 
 A diana project with Java SE using using Column API with Cassandra as driver implementation.
 
