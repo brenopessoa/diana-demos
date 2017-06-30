@@ -28,11 +28,11 @@ public class CouchbaseApp2 {
             entity.add(Document.of("age", 26));
             entity.add(Document.of("_id", idValue));
             DocumentEntity entitySaved = collectionManager.insert(entity);
-            Optional<Document> id = entitySaved.find("_id");
+            Optional<Document> name = entitySaved.find("name");
 
             JsonObject params = JsonObject.create();
-            params.put("id", id.get().get());
-            List<DocumentEntity> entities = collectionManager.n1qlQuery("select * from " + DATABASE + " where _id = $id", params);
+            params.put("name", name.get().get());
+            List<DocumentEntity> entities = collectionManager.n1qlQuery("select * from " + DATABASE + " where name = $name", params);
             System.out.println(entities);
 
 
