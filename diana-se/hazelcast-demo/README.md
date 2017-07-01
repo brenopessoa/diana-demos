@@ -1,6 +1,6 @@
 # hazelcast-demo
 
-A diana project with Java SE using Document API with Hazelcast as driver implementation.
+A diana project with Java SE using Key-value API with Hazelcast as driver implementation.
 
 ![Hazelcast Project](https://github.com/JNOSQL/jnosql-site/blob/master/assets/img/logos/hazelcast.png)
 
