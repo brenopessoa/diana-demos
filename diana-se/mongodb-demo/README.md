@@ -27,7 +27,6 @@ Follow the instructions in: http://cassandra.apache.org/doc/latest/getting_start
 1. `docker run -d --name mongodb-instance -p 27017:27017 mongodb`
 
 
-
 ## Run the code
 
 With a MongoDB instance running go to the class **App** and have fun.
