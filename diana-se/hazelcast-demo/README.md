@@ -1,4 +1,4 @@
-# mongodb-demo
+# hazelcast-demo
 
 A diana project with Java SE using Document API with Hazelcast as driver implementation.
 
