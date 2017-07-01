@@ -9,4 +9,4 @@ A diana project with Java SE using Document API with Hazelcast as driver impleme
 
 ## Run the code
 
-With a MongoDB instance running go to the class **App** and have fun.
+Go to the class **App** and have fun.
