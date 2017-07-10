@@ -1,0 +1,69 @@
+<!--
+  ~ Copyright (c) 2017 Otávio Santana and others
+  ~ All rights reserved. This program and the accompanying materials
+  ~ are made available under the terms of the Eclipse Public License v1.0
+  ~ and Apache License v2.0 which accompanies this distribution.
+  ~ The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+  ~ and the Apache License v2.0 is available at http://www.opensource.org/licenses/apache2.0.php.
+  ~
+  ~ You may elect to redistribute this code under either of these licenses.
+  ~
+  ~ Contributors:
+  ~
+  ~ Otavio Santana
+  ~
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>redis-demo</artifactId>
+	<packaging>jar</packaging>
+	<name>Diana Demo hello world to Redis</name>
+
+	<parent>
+		<groupId>org.jnosql.diana</groupId>
+		<artifactId>java-se</artifactId>
+		<version>0.0.2</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.jnosql.diana</groupId>
+			<artifactId>redis-driver</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		 <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.json.bind</groupId>
+            <artifactId>javax.json.bind-api</artifactId>
+            <version>1.0.0-RC2</version>
+        </dependency>
+        
+        
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
+            <version>1.0.0-RC2</version>
+        </dependency>
+        
+		<dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>1.1</version>
+        </dependency>
+		
+	</dependencies>
+
+
+</project>

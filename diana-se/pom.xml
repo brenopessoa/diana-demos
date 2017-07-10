@@ -34,5 +34,6 @@
     <module>mongodb-demo</module>
     <module>hazelcast-demo</module>
     <module>couchbase-demo</module>
+    <module>redis-demo</module>
 </modules>
 </project>
